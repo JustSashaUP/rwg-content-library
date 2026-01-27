@@ -1,0 +1,3 @@
+# RWG Library Project 📚
+
+## The main idea is create library of books, movie, anime... for the different purpose. For instance, the entertainment, study, self motivation...
