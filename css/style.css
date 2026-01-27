@@ -1,0 +1,27 @@
+body {
+    background-color: rgb(196, 250, 196);
+}
+
+.nav-bar {
+    width: 70%;
+    height: 100px;
+    background: rgb(255, 47, 47);
+}
+
+.flex-content {
+    width: 70%;
+    min-width: 300px;
+    height: auto;
+    margin: 0 auto; /*center a container without involving items*/
+    background: rgb(238, 238, 238);
+}
+
+.flex-item {
+    width: 400px;
+    height: 500px;
+    background: tomato;
+}
+
+footer {
+    text-align: center;
+}
