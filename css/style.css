@@ -3,12 +3,13 @@ body {
 }
 
 .nav-bar {
-    width: 70%;
+    width: 100%;
     height: 100px;
     background: rgb(255, 47, 47);
+    margin: 0 auto;
 }
 
-.flex-content {
+.content {
     width: 70%;
     min-width: 300px;
     height: auto;
@@ -16,9 +17,17 @@ body {
     background: rgb(238, 238, 238);
 }
 
+.flex-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly; /*the same spacing between items*/
+    /*justify-content: space-around;*/ /*every items have own side space, so it two space between items, but one space between start and end sides*/
+}
+
 .flex-item {
-    width: 400px;
-    height: 500px;
+    width: 300px;
+    height: 400px;
     background: tomato;
 }
 
