@@ -6,7 +6,6 @@ body {
     width: 100%;
     height: 100px;
     background: rgb(255, 47, 47);
-    margin: 0 auto;
 }
 
 .content {
@@ -22,13 +21,31 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly; /*the same spacing between items*/
-    /*justify-content: space-around;*/ /*every items have own side space, so it two space between items, but one space between start and end sides*/
+    /*justify-content: space-around;*/ 
+    /*every items have own side space, 
+    so it two space between items, 
+    but one space between start and end sides*/
+    row-gap: 25px;
+}
+
+.grid-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    padding: 25px 0px;
 }
 
 .flex-item {
-    width: 300px;
-    height: 400px;
+    flex-basis: calc(100% / 3);
+    height: 250px;
     background: tomato;
+}
+
+.grid-item {
+    width: 200px;
+    height: 250px;
+    background: tomato;
+    justify-self: center;
 }
 
 footer {
