@@ -1,105 +1,132 @@
 body {
-    background-color: #080A0C;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-.sticky-nav {
-    width: 100%;
-    height: 85px;
-    background: #F4F4F5;
-    border-radius: 100px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 50px;
-    box-sizing: border-box;
-}
-
-.nav-links {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 10px;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: black;
-    padding: 5px 10px;
-    border-radius: 10px;
-}
-
-.nav-links a:hover {
-    background-color: #E9E9EC;
-}
-
-.logo {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: nowrap;
-}
-
-.logo img {
-    width: 75px;
+  background-color: #080a0c;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .container {
-    width: 70%;
-    min-width: 300px;
-    height: auto;
-    margin: 0 auto; /*center a container without involving items*/
+  width: 70%;
+  min-width: 300px;
+  height: auto;
+  margin: 0 auto; /*center a container without involving items*/
 }
 
 @media screen and (max-width: 600px) {
-    .container {
-        width: 100%;
-    }
+  .container {
+    width: 100%;
+  }
 }
 
-.flex-content {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly; /*the same spacing between items*/
-    /*justify-content: space-around;*/ 
-    /*every items have own side space, 
-    so it two space between items, 
-    but one space between start and end sides*/
-    row-gap: 25px;
+.sticky-nav {
+  position: fixed;
+  left: 20%;
+  right: 20%;
+  top: 1%;
+  height: 75px;
+  z-index: 9999;
+  background: #f4f4f5;
+  border-radius: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  transition:
+    left 0.7s ease,
+    right 0.7s ease,
+    top 0.7s ease,
+    border-radius 0.7s ease;
 }
 
-.flex-item {
-    flex-basis: calc(100% / 3);
-    height: 250px;
-    background: tomato;
+.sticky-nav.scrolled {
+  justify-content: flex-start;
+  left: 1%;
+  right: auto;
+  width: 100px;
+  height: 90%;
+  flex-direction: column;
+  border-radius: 15px;
+  padding: 25px 0;
+  gap: 50px;
+  transition:
+    right 0.7s ease,
+    top 0.7s ease,
+    height 0.7s ease,
+    border-radius 0.7s ease;
+}
+
+.nav-links.scrolled {
+  display: flex;
+  flex-direction: column;
+  transition: 0.7s ease;
+}
+
+.nav-links.scrolled a {
+  font-size: smaller;
+}
+
+.logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.logo img {
+  width: 75px;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
+  transition: 0.7s ease;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: black;
+  padding: 5px 10px;
+  border-radius: 25px;
+  font-size: large;
+}
+
+.nav-links a:hover {
+  background-color: #6e48aa23;
+}
+
+.nav-links a:active {
+  background-color: #e9e9ec;
 }
 
 .grid-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    max-width: 90%;
-    margin: 0 auto;
-    padding: 25px 0px;
-    gap: 25px 0px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 95px 0px 25px;
+  gap: 25px 0px;
 }
 
+.grid-content.scrolled {
+}
 
 .grid-item {
-    width: 75%;
-    height: 100%;
-    min-height: 250px;
-    border: 1px dashed yellow;
-    border-radius: 10px;
-    display: flex;
-    justify-self: center;
+  width: 75%;
+  height: 100%;
+  min-height: 250px;
+  border: 1px dashed yellow;
+  border-radius: 10px;
+  display: flex;
+  justify-self: center;
 }
 
 .grid-item img {
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
 }
 
 footer {
-    text-align: center;
+  padding: 50px 0;
+  text-align: center;
+  color: #ffffff90;
 }
