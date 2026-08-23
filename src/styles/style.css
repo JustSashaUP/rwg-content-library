@@ -5,6 +5,11 @@ body {
 
 html:root {
   --bg: #0b0d12;
+  --navbar-bg: #f4f4f5;
+  --nav-links-color: black;
+  --nav-links-color-hover: rgb(86, 0, 86);
+  --nav-links-bg-hover: #6e48aa23;
+  --nav-links-bg-active: #e9e9ec;
 }
 
 .container {
@@ -27,7 +32,7 @@ html:root {
   top: 1%;
   height: 75px;
   z-index: 9999;
-  background: #f4f4f5;
+  background: var(--navbar-bg);
   border-radius: 100px;
   display: flex;
   justify-content: space-between;
@@ -87,22 +92,27 @@ html:root {
 
 .nav-links a {
   text-decoration: none;
-  color: black;
+  color: var(--nav-links-color);
   padding: 5px 10px;
   border-radius: 25px;
   font-size: large;
 }
 
 .nav-links a:hover {
-  background-color: #6e48aa23;
+  background-color: var(--nav-links-bg-hover);
+  color: var(--nav-links-color-hover);
 }
 
 .nav-links a:active {
-  background-color: #e9e9ec;
+  background-color: var(--nav-links-bg-active);
 }
 
-.nav-links a.active {
-  background-color: yellow;
+.nav-links a.active, 
+.nav-links a.active:hover {
+  border-radius: 0px;
+  border-bottom: 4px solid rgb(185, 71, 255);
+  color: rgb(96, 7, 96);
+  background-color: transparent;
 }
 
 .grid-content {
