@@ -19,7 +19,7 @@ html:root {
   margin: 0 auto; /*center a container without involving items*/
 }
 
-@media screen and (max-width: 600px) {
+@media (min-width: 320px) {
   .container {
     width: 100%;
   }
@@ -49,7 +49,7 @@ html:root {
   justify-content: flex-start;
   left: 1%;
   right: auto;
-  width: 100px;
+  width: 90px;
   height: 90%;
   flex-direction: column;
   border-radius: 15px;
@@ -107,7 +107,7 @@ html:root {
   background-color: var(--nav-links-bg-active);
 }
 
-.nav-links a.active, 
+.nav-links a.active,
 .nav-links a.active:hover {
   border-radius: 0px;
   border-bottom: 4px solid rgb(185, 71, 255);
