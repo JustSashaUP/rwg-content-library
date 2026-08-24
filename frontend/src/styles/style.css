@@ -10,6 +10,8 @@ html:root {
   --nav-links-color-hover: rgb(86, 0, 86);
   --nav-links-bg-hover: #6e48aa23;
   --nav-links-bg-active: #e9e9ec;
+  --nav-link-active-border-color: rgb(185, 71, 255);
+  --nav-link-active-taxt-color: rgb(96, 7, 96);
 }
 
 .container {
@@ -93,6 +95,7 @@ html:root {
 .nav-links a {
   text-decoration: none;
   color: var(--nav-links-color);
+  height: fit-content;
   padding: 5px 10px;
   border-radius: 25px;
   font-size: large;
@@ -110,34 +113,56 @@ html:root {
 .nav-links a.active,
 .nav-links a.active:hover {
   border-radius: 0px;
-  border-bottom: 4px solid rgb(185, 71, 255);
-  color: rgb(96, 7, 96);
+  border-bottom: 4px solid var(--nav-link-active-border-color);
+  color: var(--nav-link-active-text-color);
   background-color: transparent;
 }
 
 .grid-content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  max-width: 90%;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, 320px);
+  max-width: clamp(320px, 90%, 1700px);
   margin: 0 auto;
   padding: 95px 0px 25px;
-  gap: 25px 0px;
+  gap: 25px 25px;
 }
 
 .grid-item {
-  width: 75%;
+  position: relative;
+  width: 100%;
   height: 100%;
   min-height: 250px;
-  border: 1px dashed yellow;
   border-radius: 10px;
   display: flex;
-  justify-self: center;
+  overflow: hidden;
 }
 
 .grid-item img {
   width: 100%;
   height: 100%;
-  border-radius: 10px;
+  object-fit: cover;
+}
+
+.category-container {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  z-index: 2;
+}
+
+.category-label {
+  display: inline-flex;
+  max-width: fit-content;
+  background-color: white;
+  opacity: 0.7;
+  font-weight: bold;
+  border-radius: 15px;
+  padding: 0 5px;
 }
 
 footer {
